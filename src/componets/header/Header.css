@@ -20,3 +20,95 @@ body
   border-top: 5px solid #999999;
   border-bottom: 5px solid #999999;
 }
+
+#logo
+{
+  display: block;
+  background-image: url('../../assets/images/logo.png');
+  background-repeat: no-repeat;
+  width: 234px;
+  height: 150px;
+}
+
+#titlebox {
+  background-image: url(../../assets/images/title.png);
+  background-repeat: no-repeat;
+  display: flex;
+  position: relative;
+  height: 150px;
+}
+
+navmenu
+{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 100px;
+}
+
+
+.loginbox
+{
+  margin: 94px 0px 0px 0px; /*top right bottom left */
+}
+
+.login
+{
+    display:  block;    
+    background-image: url('../../assets/images/login2.png');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    margin:  5px;
+    background-size: 30px 30px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #666666;
+    cursor: pointer;
+}
+
+
+.logout
+{
+    display:  block;
+    /* background-image: url('../images/logout.png'); */
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    margin:  5px;
+    background-size: 30px 30px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #666666;
+}
+
+#searchbox {
+  position: relative;
+  height: 30px;
+  width: 424px;
+  margin: 105px 0px 0px 25px;
+  padding: 0px 0px 0px 4px;
+  border: 1px solid #999999;
+  -moz-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.searchicon
+{
+  background: #ea0001;
+  background-image: url('../../assets/images/search.png');
+  
+  width: 30px;
+  height: 30px; 
+
+  margin: 105px 0px 0px -1px;
+  padding: 0px;
+
+  border: 1px solid #999999;
+
+  -moz-border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 5px 5px 0px;
+}
+

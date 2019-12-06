@@ -23,10 +23,8 @@ function Header() {
 		<div id='logo'></div>
 		<div id='titlebox'>
         <input id='searchbox' type='text' 
-            //onFocus={showEverythingDrop()} 
-            //onKeyUp={useKeyPress()} 
             onChange={e => getDropDownData(e.target.value)}
-            />
+        />
         <div className='searchicon smallbutton' />
 				<div id="everythingdropdown"></div>
 		</div>

@@ -2,6 +2,8 @@
 run the follwoing command
 npm i -g create-react-app && create-react-app marshalDB2
 
+## Then RUN...
+npm install axios
 
 ## Available Scripts
 In the project directory, you can run:

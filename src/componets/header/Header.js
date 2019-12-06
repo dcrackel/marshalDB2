@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-//import {showEverythingDrop, } from '../common/search.js';
 
 const getDropDownData = (value) =>
 {
@@ -9,7 +8,13 @@ const getDropDownData = (value) =>
       .then(res => res.json())
       .then((data) => {
         //this.setState({ contacts: data })
-        alert(data);
+/*
+return json
+id: "1852"
+name: "Gebhard Rauten"
+type: "0" 
+*/
+        console.log(data);
       })
       .catch(console.log)
     }

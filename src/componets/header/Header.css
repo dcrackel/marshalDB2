@@ -89,10 +89,12 @@ navmenu
   height: 30px;
   width: 424px;
   margin: 105px 0px 0px 25px;
-  padding: 0px 0px 0px 4px;
+  padding: 0px 0px 0px 12px;
   border: 1px solid #999999;
-  -moz-border-radius: 5px 0px 0px 5px;
   border-radius: 5px 0px 0px 5px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #666666;
 }
 
 .searchicon
@@ -112,3 +114,75 @@ navmenu
   border-radius: 0px 5px 5px 0px;
 }
 
+.everythingdropdown
+{
+  /* display: none; */
+  position: absolute;
+  width: 400px;
+  border-top: 1px solid #999999;
+  background: #ffffff;
+  overflow: auto;
+  z-index: 10;
+  padding: 10px;
+  margin-left: 31px;
+  margin-top: 136px;
+  border-radius: 0px 0px 10px 10px;
+  max-height: 280px;
+  transition: all 0.5s ease-in;
+}
+
+.locitem
+{
+  display: flex;
+  margin: 0px 3px 0px 3px;
+
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  background-color: #ffffff;
+  color: #666666; 
+  cursor: pointer;
+  
+  padding: 2px 2px 2px 4px;
+}
+
+.locitem:hover
+{
+  background-color: #DDDDDD;
+  -moz-border-radius: 10px; 
+  border-radius: 10px;  
+}
+
+.personicon
+{
+  display: block;
+
+  width: 20px;
+  height: 20px;  
+  
+  padding-right: 4px;
+  
+  background-image: url('../../assets/images/personsmall.png');
+  background-repeat: no-repeat;  
+}
+
+.shireicon
+{
+  width: 20px;
+  height: 20px;  
+  
+  margin-right: 4px;
+  
+  background-image: url('../../assets/images/shireicon.png');
+  background-repeat: no-repeat;  
+}
+
+.baronyicon
+{
+  width: 20px;
+  height: 20px;  
+  
+  margin-right: 4px;
+  
+  background-image: url('../../assets/images/baronyicon.png');
+  background-repeat: no-repeat;  
+}

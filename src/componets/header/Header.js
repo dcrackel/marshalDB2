@@ -29,9 +29,9 @@ function Header() {
     fetchData();
     }
 
-    if (query.length < 1 && doSearch && debounced){
+    if (query.length < 2 && doSearch && debounced){
        setData({ hits: [] });
-       setQuery('');
+       //setQuery('');
        setDoSearch(false);
     }
 

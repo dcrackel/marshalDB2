@@ -13,22 +13,28 @@ function Header() {
     setDoSearch(true);
     setQuery(text);
   }
-  
+
   //this adds a delay, when a user starts typing until the search is preformed to allow
   //them to finish typing without doing a look-up on every charater as it's typed.
   const debounced = useDebounce(query, 500);
 
   useEffect(() => {
     if (query.length > 1 && doSearch && debounced){
-    const fetchData = async () => {
-      setDoSearch(false);
-      const result = await axios(`https://marshaldb.midrealm.org/mid/dropdown.php?filterString=${query}`,);
-      setData(result.data);
-     
-      //result.data.map(item => console.log(item.name));
-    };
+      console.log(`${query} ${doSearch} ${debounced}`);
+      const fetchData = async () => {
+        setDoSearch(false);
+        const result = await axios(`https://marshaldb.midrealm.org/mid/dropdown2.php?s=${query}`,);
+        setData(result.data);
+     };
     fetchData();
     }
+
+    if (query.length < 1 && doSearch && debounced){
+       setData({ hits: [] });
+       setQuery('');
+       setDoSearch(false);
+    }
+
   }, [data, debounced, doSearch, query]);
 
   return (
@@ -38,7 +44,11 @@ function Header() {
         <input id='searchbox' type='text' value={query} onChange={e => searchDropDown(e.target.value)} />
         <div className='searchicon smallbutton' />
 				<div id="everythingdropdown">
-
+        {data.hits.map(item => (
+          <li key={item.id}>
+            <a href={item.id}>{item.name}</a>
+          </li>
+        ))}
         </div>
 		</div>
 	 

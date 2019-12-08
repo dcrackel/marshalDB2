@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import useDebounce from '../common/debounce.js';
+import globalPersonStore from "../common/globalstore.js";
 import './Header.css';
 
 function Header() {
@@ -9,6 +9,7 @@ function Header() {
   const [query, setQuery] = useState('');
   const [doSearch, setDoSearch] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
+  const [globalState, globalActions] = globalPersonStore();
 
   const removeURLEncoding = inStr => {
     inStr = inStr.replace(/%20/g, ' ');
@@ -19,20 +20,32 @@ function Header() {
     let classN = 'personicon';
     if (type === "1") classN = 'shireicon';
     if (type === "2") classN = 'baronyicon';
-    console.log(type + classN);
     return classN;
   }
   
   const EverythingDropDown = props => (
     <div id="everythingdropdown" className='everythingdropdown'>
     {data.hits.map(item => (
-        <div key={item.id} className="locitem" >
-          <div key={item.id} className={getClassForType(item.type)}></div>
-          {removeURLEncoding(item.name)}
+        <div key={item.id} className="locitem" onClick={e => selectItem(item.id, item.type, removeURLEncoding(item.name))} >
+          <div className={getClassForType(item.type)}></div>
+          {removeURLEncoding(item.name)} 
           </div>
     )) }
     </div>
   );
+
+  const selectItem = (id, type, name) => {
+    const person = {
+      id: '',
+      name: '',
+      type: ''
+    };
+    person.id = id;
+    person.type = type;
+    person.name = name;
+    console.log(person);
+    globalActions.storePerson(person);
+  };
 
   const searchDropDown = (text) =>  {
     setDoSearch(true);
@@ -46,12 +59,12 @@ function Header() {
   useEffect(() => {
     if (query.length > 1 && doSearch && debounced){
       const fetchData = async () => {
-        setDoSearch(false);
-        const result = await axios(`https://marshaldb.midrealm.org/mid/dropdown2.php?s=${query}`,);
-        setData(result.data);
-     };
-    fetchData();
-    setShowDropDown(true);
+          setDoSearch(false);
+          const result = await axios(`https://marshaldb.midrealm.org/mid/dropdown2.php?s=${query}`,);
+          setData(result.data);
+      };
+      fetchData();
+      setShowDropDown(true);
     }
 
     if (query.length < 2 && doSearch && debounced){
@@ -60,7 +73,7 @@ function Header() {
        setShowDropDown(false);
     }    
 
-  }, [data, debounced, doSearch, query]);
+  }, [data, doSearch, query]);
 
   return (
 	<div id='logobox' className='Logo-header' >
@@ -68,7 +81,7 @@ function Header() {
 		<div id='titlebox'>
         <input id='searchbox' type='text' value={query} onChange={e => searchDropDown(e.target.value)} />
         <div className='searchicon smallbutton' />
-        {showDropDown && <EverythingDropDown></EverythingDropDown>}
+        {showDropDown && <EverythingDropDown />}
 		</div>
 	 
         <div id='navmenu'>

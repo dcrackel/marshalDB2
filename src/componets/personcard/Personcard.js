@@ -22,7 +22,7 @@ function Personcard() {
               }
           
             fetchData();
-            }
+        }
 
         }, [globalActions, globalState.person]);
 

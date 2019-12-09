@@ -1,0 +1,125 @@
+.card {
+    position: relative;
+    width: 400px;
+    min-height: 100px;
+    margin: 20px;
+    background: #dddfde;
+    border: 5px solid #999999;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.cardheader {
+    margin: 5px;
+    display: flex;
+}
+
+.headertext {
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 22px;
+    margin-top: 4px;
+    width: 272px;
+    color: #666666;
+}
+
+.postdate {
+    font-family: Verdana, Geneva, sans-serif;
+    float: left;
+    background: url(../../assets/images/marshal-icons/cal.png) no-repeat;
+    background-color: #404040;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 300;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.postmonth {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #e4e4e4;
+    font-size: 0.7em;
+    line-height: 0.3em;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+.postmonth {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #e4e4e4;
+    font-size: 0.7em;
+    line-height: 0.3em;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+.vtext {
+    position: relative;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    color: #999999;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    margin-left: 55px;
+    margin-top: -28px;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #999999;
+}
+
+.auth {
+    position: relative;
+    width: 40px;
+    height: 60px;
+    margin-right: 10px;
+    margin-top: 1px;
+    margin-bottom: 9px;
+    cursor: pointer;
+}
+
+.authbox {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.authtext {
+    margin-top: 42px;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 9px;
+}
+
+.marshalicon
+{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 6px;
+}
+
+.postday {
+    color: #e4e4e4;
+    font-size: 0.7em;  
+    padding-top: 8px;
+    font-weight: 300;
+  }
+
+#gr {
+    background-image: url(../../assets/images/marshal-icons/riding.png);
+    background-repeat: no-repeat;
+}
+
+#equestrianicon {
+    background-image: url(../../assets/images/marshal-icons/equestrian.png);
+    background-repeat: no-repeat;
+}
+

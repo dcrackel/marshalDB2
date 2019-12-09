@@ -6,7 +6,11 @@ const initialState = { counter: 0 };
 const person = {
   id: '',
   name: '',
-  type: ''
+  type: '',
+  branchid: '',
+  branch: '',
+  regionid: '',
+  region: ''
 };
 
 const useGlobal = useGlobalHook(React, initialState, actions);

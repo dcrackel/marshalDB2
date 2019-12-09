@@ -35,16 +35,14 @@ function Header() {
   );
 
   const selectItem = (id, type, name) => {
-    const person = {
-      id: '',
-      name: '',
-      type: ''
-    };
+    const person = {id: '', name: '', type: '', branchid: '', branch: '', regionid: '', region: '' };
     person.id = id;
     person.type = type;
     person.name = name;
-    console.log(person);
     globalActions.storePerson(person);
+    setQuery('');
+    setDoSearch(false);
+    setShowDropDown(false);
   };
 
   const searchDropDown = (text) =>  {
@@ -54,15 +52,16 @@ function Header() {
 
   //this adds a delay, when a user starts typing until the search is preformed to allow
   //them to finish typing without doing a look-up on every charater as it's typed.
-  const debounced = useDebounce(query, 500);
+  const debounced = useDebounce(query, 400);
 
   useEffect(() => {
     if (query.length > 1 && doSearch && debounced){
       const fetchData = async () => {
           setDoSearch(false);
-          const result = await axios(`https://marshaldb.midrealm.org/mid/dropdown2.php?s=${query}`,);
+          const result = await axios(`https://marshaldb.midrealm.org/mid2/dropdown2.php?s=${query}`,);
           setData(result.data);
       };
+      
       fetchData();
       setShowDropDown(true);
     }

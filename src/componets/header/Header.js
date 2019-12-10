@@ -26,7 +26,7 @@ function Header() {
   const EverythingDropDown = props => (
     <div id="everythingdropdown" className='everythingdropdown'>
     {data.hits.map(item => (
-        <div key={item.id} className="locitem" onClick={e => selectItem(item.id, item.type, removeURLEncoding(item.name))} >
+        <div key={item.id + item.type} className="locitem" onClick={e => selectItem(item.id, item.type, removeURLEncoding(item.name))} >
           <div className={getClassForType(item.type)}></div>
           {removeURLEncoding(item.name)} 
           </div>
@@ -52,7 +52,7 @@ function Header() {
 
   //this adds a delay, when a user starts typing until the search is preformed to allow
   //them to finish typing without doing a look-up on every charater as it's typed.
-  const debounced = useDebounce(query, 400);
+  const debounced = useDebounce(query, 250);
 
   useEffect(() => {
     if (query.length > 1 && doSearch && debounced){

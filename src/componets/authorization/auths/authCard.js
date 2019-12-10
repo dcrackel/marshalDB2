@@ -69,11 +69,13 @@ export default function rawAuthData() {
     rawData.push(auth311);
     rawData.push(auth512);
     rawData.push(auth515);
+    rawData.push(auth516);
     rawData.push(auth517);
     rawData.push(auth518);
     rawData.push(auth520);
     rawData.push(auth552);
     rawData.push(auth622);
+    rawData.push(auth623);
     rawData.push(auth624);
     rawData.push(auth625);
     rawData.push(auth626);

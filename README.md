@@ -7,6 +7,9 @@ npm install axios
 npm install -s use-global-hook
 
 
+## Deploys
+This app deploys to: http://www.new.lozengia.com/ for the time. Will change in the future as features comeplete.
+
 
 ## Available Scripts
 In the project directory, you can run:

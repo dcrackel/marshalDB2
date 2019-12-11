@@ -120,14 +120,13 @@ navmenu
 {
   /* display: none; */
   position: absolute;
-  /* width: 400px; */
+  width: 230px;
   border-top: 1px solid #999999;
   background: #ffffff;
   overflow: auto;
   z-index: 10;
   padding: 10px;
-  margin-left: 31px;
-  margin-top: 136px;
+  margin: 136px 0px 0px 14px;
   border-radius: 0px 0px 10px 10px;
   max-height: 280px;
   transition: all 0.5s ease-in;

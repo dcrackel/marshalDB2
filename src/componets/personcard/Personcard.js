@@ -42,7 +42,7 @@ function Personcard() {
     );
     
     const PersonCard = props => (
-        <div id="personcard" className="" >
+        <div className="personcard" >
             <div id="innerpersoncard" className="personcard" pid="1852">
                 <div id="namebox">
                     <div id="personicon"></div>

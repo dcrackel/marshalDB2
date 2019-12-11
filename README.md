@@ -73,3 +73,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 https://marshaldb.midrealm.org/mid2/personauths.php?pId=1852
 https://marshaldb.midrealm.org:2083/cpsess1004634510/3rdparty/phpMyAdmin/tbl_sql.php?db=marshald_marshaldb&table=branch
+
+
+build pipeline
+https://myh.godaddy.com/#/hosting/cpanel/account/811d9b0e-736f-11e8-8131-3417ebe7253b

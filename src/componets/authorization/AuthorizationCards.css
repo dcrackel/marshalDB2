@@ -5,13 +5,13 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 900px;
+    /* width: 900px; */
     padding: 10px;
 }
 
 .card {
     position: relative;
-    width: 400px;
+    width: 400px; 
     min-height: 100px;
     margin: 20px;
     background: #dddfde;
@@ -30,7 +30,7 @@
     font-family: Verdana, Geneva, sans-serif;
     font-size: 22px;
     margin-top: 4px;
-    width: 272px;
+    /* width: 272px; */
     color: #666666;
 }
 

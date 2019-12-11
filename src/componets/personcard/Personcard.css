@@ -1,38 +1,43 @@
+@media only screen and (max-width: 600px) {
+  #innerpersoncard {
+    flex-direction: column !important;
+  }
+  #printericon {
+    display: none !important;
+  }
+}
+
 .personcard
 {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   margin-left: auto;
-   margin-right: auto;
-   width: 830px;
-   padding: 10px;
-   background: #dedede;   
-   border: 5px solid #999999;
-   -moz-border-radius: 10px;
-   border-radius: 10px;     
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 830px; */
+  /* padding: 10px; */
+  /* background: #dedede; */
+  border: 1px solid #999999;
+  /* border-radius: 10px; */    
 }
 
 #innerpersoncard
 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 830px;
-    padding: 10px;
-    background: #dedede;
-    border: 5px solid #999999;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background: #dedede;
+  border: 5px solid #999999;
+  border-radius: 10px;
+  padding: 10px 0px 0px 10px;
 }
 
 #namebox
 {
   display: flex;
-  flex-wrap: wrap;
-  width: 50%; 
+  padding: 0px 20px 10px 0px;
 }
 
 #name
@@ -66,8 +71,7 @@
 .groupbox
 {
   display: flex;
-  flex-wrap: wrap;
-  width: 40%;
+  padding: 0px 20px 10px 0px;
 }
 
 #printericon
@@ -92,7 +96,6 @@
   font-family: Verdana, Geneva, sans-serif;
   font-size: 24px;
   color: #666666;
-  width: 260px;
 }
 
 #region{

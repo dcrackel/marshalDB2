@@ -1,10 +1,8 @@
-body
-{
-  background-color: #004904;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
+@media only screen and (max-width: 600px) {
 
+  #logo {
+    display: none !important;
+  }
 }
 
 #logobox
@@ -12,13 +10,17 @@ body
   background-color: #dedede;
   display: flex;
   justify-content: center;
+  height: 50%;
+  min-width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
-  width: 100%;
-  height: 150px;
   margin-top: 10px;
   margin-bottom: 30px;
   border-top: 5px solid #999999;
   border-bottom: 5px solid #999999;
+  /* padding: 5px 0px 0px 0px; */
 }
 
 #logo
@@ -26,16 +28,18 @@ body
   display: block;
   background-image: url('../../assets/images/logo.png');
   background-repeat: no-repeat;
-  width: 234px;
+  width: 234px; 
   height: 150px;
 }
+
 
 #titlebox {
   background-image: url(../../assets/images/title.png);
   background-repeat: no-repeat;
+  background-position: center top;
   display: flex;
-  position: relative;
-  height: 150px;
+  min-width: 300px;
+  margin: 5px 0px 5px 0px;
 }
 
 navmenu
@@ -45,7 +49,6 @@ navmenu
     right: 10px;
     top: 100px;
 }
-
 
 .loginbox
 {
@@ -68,7 +71,6 @@ navmenu
     cursor: pointer;
 }
 
-
 .logout
 {
     display:  block;
@@ -87,12 +89,15 @@ navmenu
 #searchbox {
   position: relative;
   height: 30px;
-  width: 424px;
-  margin: 105px 0px 0px 25px;
-  padding: 0px 0px 0px 4px;
+  min-width: 241px;
+  /* max-width: 300px; */
+  margin: 105px 0px 0px 10px;
+  padding: 0px 0px 0px 12px;
   border: 1px solid #999999;
-  -moz-border-radius: 5px 0px 0px 5px;
   border-radius: 5px 0px 0px 5px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #666666;
 }
 
 .searchicon
@@ -101,14 +106,85 @@ navmenu
   background-image: url('../../assets/images/search.png');
   
   width: 30px;
-  height: 30px; 
-
+  height: 30px;
   margin: 105px 0px 0px -1px;
   padding: 0px;
-
   border: 1px solid #999999;
-
-  -moz-border-radius: 0px 5px 5px 0px;
   border-radius: 0px 5px 5px 0px;
+  background-size: 20px 20px;
+  background-position: 5px;
+  background-repeat: no-repeat;
 }
 
+.everythingdropdown
+{
+  /* display: none; */
+  position: absolute;
+  /* width: 400px; */
+  border-top: 1px solid #999999;
+  background: #ffffff;
+  overflow: auto;
+  z-index: 10;
+  padding: 10px;
+  margin-left: 31px;
+  margin-top: 136px;
+  border-radius: 0px 0px 10px 10px;
+  max-height: 280px;
+  transition: all 0.5s ease-in;
+}
+
+.locitem
+{
+  display: flex;
+  margin: 0px 3px 0px 3px;
+
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  background-color: #ffffff;
+  color: #666666; 
+  cursor: pointer;
+  
+  padding: 2px 2px 2px 4px;
+}
+
+.locitem:hover
+{
+  background-color: #DDDDDD;
+  -moz-border-radius: 10px; 
+  border-radius: 10px;  
+}
+
+.personicon
+{
+  display: block;
+
+  width: 20px;
+  height: 20px;  
+  
+  padding-right: 4px;
+  
+  background-image: url('../../assets/images/personsmall.png');
+  background-repeat: no-repeat;  
+}
+
+.shireicon
+{
+  width: 20px;
+  height: 20px;  
+  
+  margin-right: 4px;
+  
+  background-image: url('../../assets/images/shireicon.png');
+  background-repeat: no-repeat;  
+}
+
+.baronyicon
+{
+  width: 20px;
+  height: 20px;  
+  
+  margin-right: 4px;
+  
+  background-image: url('../../assets/images/baronyicon.png');
+  background-repeat: no-repeat;  
+}

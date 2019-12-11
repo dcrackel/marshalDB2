@@ -1,0 +1,370 @@
+.cardbox
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 900px; */
+    padding: 10px;
+}
+
+.card {
+    position: relative;
+    width: 400px; 
+    min-height: 100px;
+    margin: 20px;
+    background: #dddfde;
+    border: 5px solid #999999;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.cardheader {
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headertext {
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 22px;
+    margin-top: 4px;
+    /* width: 272px; */
+    color: #666666;
+}
+
+.postdate {
+    font-family: Verdana, Geneva, sans-serif;
+    background: url(../../assets/images/marshal-icons/cal.png) no-repeat;
+    background-color: #404040;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 300;
+    margin: 0px 15px 0px 0px;
+    cursor: pointer;
+}
+
+.postmonth {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #e4e4e4;
+    font-size: 0.7em;
+    line-height: 0.3em;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+.postmonth {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #e4e4e4;
+    font-size: 0.7em;
+    line-height: 0.3em;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+.vtext {
+    position: relative;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    color: #999999;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    margin-left: 55px;
+    margin-top: -28px;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #999999;
+}
+
+.auth {
+    position: relative;
+    width: 40px;
+    height: 60px;
+    margin-right: 10px;
+    margin-top: 1px;
+    margin-bottom: 9px;
+    cursor: pointer;
+}
+
+.authbox {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.authtext {
+    margin-top: 42px;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 9px;
+}
+
+.marshalicon
+{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 6px;
+}
+
+.postday {
+    color: #e4e4e4;
+    font-size: 0.7em;  
+    padding-top: 8px;
+    font-weight: 300;
+  }
+
+.Armored
+{
+    background-image: url(../../assets/images/marshal-icons/armored.png);
+    background-repeat: no-repeat;
+}
+
+.Rapier
+{
+    background-image: url(../../assets/images/marshal-icons/rapier.png);
+    background-repeat: no-repeat;
+}
+
+.Youth
+{
+    background-image: url(../../assets/images/marshal-icons/youth.png);
+    background-repeat: no-repeat;
+}
+
+.Equestrian
+{
+    background-image: url(../../assets/images/marshal-icons/equestrian.png);
+    background-repeat: no-repeat;   
+}
+
+.Marshal
+{
+    background-image: url(../../assets/images/marshal-icons/marshalling.png);
+    background-repeat: no-repeat;     
+}
+
+.auth137 {
+    background-image: url(../../assets/images/marshal-icons/armored.png);
+    background-repeat: no-repeat;
+}
+
+.auth138 {
+    background-image: url(../../assets/images/marshal-icons/archery.png);
+    background-repeat: no-repeat;
+}
+
+.auth139 {
+    background-image: url(../../assets/images/marshal-icons/rapier.png);
+    background-repeat: no-repeat;
+}
+
+.auth140 {
+    background-image: url(../../assets/images/marshal-icons/camarshal.png);
+    background-repeat: no-repeat;
+}
+
+.auth141 {
+    background-image: url(../../assets/images/marshal-icons/equestrian.png);
+    background-repeat: no-repeat;
+}
+
+.auth142 {
+    background-image: url(../../assets/images/marshal-icons/siegemarshal.png);
+    background-repeat: no-repeat;
+}
+
+.auth143 {
+    background-image: url(../../assets/images/marshal-icons/thrownweapons.png);
+    background-repeat: no-repeat;
+}
+
+.auth144 {
+    background-image: url(../../assets/images/marshal-icons/youth.png);
+    background-repeat: no-repeat;
+}
+
+.auth146 {
+    background-image: url(../../assets/images/marshal-icons/clerkofthelist.png);
+    background-repeat: no-repeat;
+}
+
+.auth147 {
+    background-image: url(../../assets/images/marshal-icons/KEM.png);
+    background-repeat: no-repeat;
+}
+
+.auth151 {
+    background-image: url(../../assets/images/marshal-icons/youth.png);
+    background-repeat: no-repeat;
+}
+
+.auth153 {
+    background-image: url(../../assets/images/marshal-icons/dogmarshal2.png);
+    background-repeat: no-repeat;
+}
+
+.auth31 {
+    background-image: url(../../assets/images/marshal-icons/shield.png);
+    background-repeat: no-repeat;
+}
+
+.auth32 {
+    background-image: url(../../assets/images/marshal-icons/twostick.png);
+    background-repeat: no-repeat;
+}
+
+.auth33 {
+    background-image: url(../../assets/images/marshal-icons/greatweapon.png);
+    background-repeat: no-repeat;
+}
+
+.auth34 {
+    background-image: url(../../assets/images/marshal-icons/spear.png);
+    background-repeat: no-repeat;
+}
+
+.auth35 {
+    background-image: url(../../assets/images/marshal-icons/polearm.png);
+    background-repeat: no-repeat;
+}
+
+.auth36 {
+    background-image: url(../../assets/images/marshal-icons/youthsparing.png);
+    background-repeat: no-repeat;
+}
+
+.auth39 {
+    background-image: url(../../assets/images/marshal-icons/combatarchery.png);
+    background-repeat: no-repeat;
+}
+
+.auth310 {
+    background-image: url(../../assets/images/marshal-icons/crew.png);
+    background-repeat: no-repeat;
+}
+
+.auth311 {
+    background-image: url(../../assets/images/marshal-icons/siege.png);
+    background-repeat: no-repeat;
+}
+
+.auth512 {
+    background-image: url(../../assets/images/marshal-icons/singlerapier.png);
+    background-repeat: no-repeat;
+}
+
+.auth515 {
+    background-image: url(../../assets/images/marshal-icons/shield.png);
+    background-repeat: no-repeat;
+}
+
+.auth516 {
+    background-image: url(../../assets/images/marshal-icons/dagger.png);
+    background-repeat: no-repeat;
+}
+
+.auth517 {
+    background-image: url(../../assets/images/marshal-icons/twostick.png);
+    background-repeat: no-repeat;
+}
+
+.auth518 {
+    background-image: url(../../assets/images/marshal-icons/longsword.png);
+    background-repeat: no-repeat;
+}
+
+.auth520 {
+    background-image: url(../../assets/images/marshal-icons/cut.png);
+    background-repeat: no-repeat;
+}
+
+.auth552 {
+    background-image: url(../../assets/images/marshal-icons/youthsparing.png);
+    background-repeat: no-repeat;
+}
+
+.auth622 {
+    background-image: url(../../assets/images/marshal-icons/div1.png);
+    background-repeat: no-repeat;
+}
+
+.auth623 {
+    background-image: url(../../assets/images/marshal-icons/div1.png);
+    background-repeat: no-repeat;
+}
+
+.auth624 {
+    background-image: url(../../assets/images/marshal-icons/div2.png);
+    background-repeat: no-repeat;
+}
+
+.auth625 {
+    background-image: url(../../assets/images/marshal-icons/div2.png);
+    background-repeat: no-repeat;
+}
+
+.auth626 {
+    background-image: url(../../assets/images/marshal-icons/div2.png);
+    background-repeat: no-repeat;
+}
+
+.auth627 {
+    background-image: url(../../assets/images/marshal-icons/div3.png);
+    background-repeat: no-repeat;
+}
+
+.auth628 {
+    background-image: url(../../assets/images/marshal-icons/div3.png);
+    background-repeat: no-repeat;
+}
+
+.auth629 {
+    background-image: url(../../assets/images/marshal-icons/div3.png);
+    background-repeat: no-repeat;
+}
+
+.auth830 {
+    background-image: url(../../assets/images/marshal-icons/riding.png);
+    background-repeat: no-repeat;
+}
+
+.auth831 {
+    background-image: url(../../assets/images/marshal-icons/mountedgames.png);
+    background-repeat: no-repeat;
+}
+
+.auth832 {
+    background-image: url(../../assets/images/marshal-icons/mountedarchery.png);
+    background-repeat: no-repeat;
+}
+
+.auth833 {
+    background-image: url(../../assets/images/marshal-icons/driving.png);
+    background-repeat: no-repeat;
+}
+
+.auth834 {
+    background-image: url(../../assets/images/marshal-icons/crestcombat.png);
+    background-repeat: no-repeat;
+}
+
+.auth835 {
+    background-image: url(../../assets/images/marshal-icons/mountedcombat.png);
+    background-repeat: no-repeat;
+}
+
+.auth836 {
+    background-image: url(../../assets/images/marshal-icons/joust.png);
+    background-repeat: no-repeat;
+}

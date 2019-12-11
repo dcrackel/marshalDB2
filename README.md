@@ -2,6 +2,14 @@
 run the follwoing command
 npm i -g create-react-app && create-react-app marshalDB2
 
+## Then RUN...
+npm install axios
+npm install -s use-global-hook
+
+
+## Deploys
+This app deploys to: http://www.new.lozengia.com/ for the time. Will change in the future as features comeplete.
+
 
 ## Available Scripts
 In the project directory, you can run:
@@ -59,3 +67,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+
+https://marshaldb.midrealm.org/mid2/personauths.php?pId=1852
+https://marshaldb.midrealm.org:2083/cpsess1004634510/3rdparty/phpMyAdmin/tbl_sql.php?db=marshald_marshaldb&table=branch
+
+
+build pipeline
+https://myh.godaddy.com/#/hosting/cpanel/account/811d9b0e-736f-11e8-8131-3417ebe7253b

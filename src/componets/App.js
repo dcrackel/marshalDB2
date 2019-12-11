@@ -1,15 +1,15 @@
 import React from 'react';
-//import logo from '../assets/logo.svg';
 import './App.css';
 import Header from './header/Header';
+import Personcard from './personcard/Personcard'
+import AuthorizationCards from './authorization/AuthorizationCards'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <div>
-        
-      </div>
+      <Personcard />
+      <AuthorizationCards />
     </div>
   );
 }

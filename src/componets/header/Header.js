@@ -11,6 +11,11 @@ function Header() {
   const [showDropDown, setShowDropDown] = useState(false);
   const [globalState, globalActions] = globalPersonStore();
 
+  const loginWasClicked = () => {
+    globalActions.showLogin = true;
+    alert('Login Was Clicked' + globalActions.showLogin);
+  }
+
   const removeURLEncoding = inStr => {
     inStr = inStr.replace(/%20/g, ' ');
     return inStr;
@@ -83,10 +88,12 @@ function Header() {
         {showDropDown && <EverythingDropDown />}
 		</div>
 	 
-        <div id='navmenu'>
-            <div id='activereport' />
-	        <div id='authreport' />
-            <div id='loginbutton' />
+        <div className='navmenu'>
+            <div className='activereport' />
+	        <div className='authreport' />
+            <div className='loginbutton'>
+              <div onClick={e => loginWasClicked()} className="login" />
+            </div>
         </div>
 	</div>
  

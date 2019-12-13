@@ -5,6 +5,9 @@ npm i -g create-react-app && create-react-app marshalDB2
 ## Then RUN...
 npm install axios
 npm install -s use-global-hook
+npm i hookrouter
+
+npm install auth0-js@9.8.0 auth0-lock@11.10.0 express@4.16.3 express-jwt@5.3.1 express-jwt-authz@1.0.0 jwks-rsa@1.3.0 npm-run-all@4.1.3 
 
 
 ## Deploys
@@ -70,6 +73,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 
 
+
+
+### Other Links
+
+https://auth0.com/blog/handling-authentication-in-react-with-context-and-hooks/
 
 https://marshaldb.midrealm.org/mid2/personauths.php?pId=1852
 https://marshaldb.midrealm.org:2083/cpsess1004634510/3rdparty/phpMyAdmin/tbl_sql.php?db=marshald_marshaldb&table=branch

@@ -1,12 +1,9 @@
 @media only screen and (max-width: 600px) {
-
   #logo {
     display: none !important;
   }
 }
-
-#logobox
-{
+#logobox {
   background-color: #dedede;
   display: flex;
   justify-content: center;
@@ -19,19 +16,15 @@
   margin-top: 10px;
   margin-bottom: 30px;
   border-top: 5px solid #999999;
-  border-bottom: 5px solid #999999;
-  /* padding: 5px 0px 0px 0px; */
+  border-bottom: 5px solid #999999; /* padding: 5px 0px 0px 0px; */
 }
-
-#logo
-{
+#logo {
   display: block;
-  background-image: url('../../assets/images/logo.png');
+  background-image: url("../../assets/images/logo.png");
   background-repeat: no-repeat;
-  width: 234px; 
+  width: 234px;
   height: 150px;
 }
-
 
 #titlebox {
   background-image: url(../../assets/images/title.png);
@@ -41,56 +34,45 @@
   min-width: 300px;
   margin: 5px 0px 5px 0px;
 }
-
-.navmenu
-{
-    display: flex;
-    position: absolute;
-    right: 10px;
-    top: 100px;
+.navmenu {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 100px;
 }
-
-.loginbox
-{
+.loginbox {
   margin: 94px 0px 0px 0px; /*top right bottom left */
 }
-
-.login
-{
-    display:  block;    
-    background-image: url('../../assets/images/login2.png');
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    margin:  15px 0px 0px 0px;
-    background-size: 30px 30px;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    color: #666666;
-    cursor: pointer;
+.login {
+  display: block;
+  background-image: url("../../assets/images/login2.png");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  margin: 15px 0px 0px 0px;
+  background-size: 30px 30px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #666666;
+  cursor: pointer;
 }
-
-.logout
-{
-    display:  block;
-    /* background-image: url('../images/logout.png'); */
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    margin:  5px;
-    background-size: 30px 30px;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    color: #666666;
+.logout {
+  display: block; /* background-image: url('../images/logout.png'); */
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background-size: 30px 30px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #666666;
 }
-
 #searchbox {
   position: relative;
   height: 30px;
-  min-width: 241px;
-  /* max-width: 300px; */
+  min-width: 241px; /* max-width: 300px; */
   margin: 105px 0px 0px 10px;
   padding: 0px 0px 0px 12px;
   border: 1px solid #999999;
@@ -99,12 +81,9 @@
   font-size: 10pt;
   color: #666666;
 }
-
-.searchicon
-{
+.searchicon {
   background: #ea0001;
-  background-image: url('../../assets/images/search.png');
-  
+  background-image: url("../../assets/images/search.png");
   width: 30px;
   height: 30px;
   margin: 105px 0px 0px -1px;
@@ -115,9 +94,7 @@
   background-position: 5px;
   background-repeat: no-repeat;
 }
-
-.everythingdropdown
-{
+.everythingdropdown {
   /* display: none; */
   position: absolute;
   width: 230px;
@@ -131,59 +108,40 @@
   max-height: 280px;
   transition: all 0.5s ease-in;
 }
-
-.locitem
-{
+.locitem {
   display: flex;
   margin: 0px 3px 0px 3px;
-
   font-family: Verdana, Geneva, sans-serif;
   font-size: 12px;
   background-color: #ffffff;
-  color: #666666; 
+  color: #666666;
   cursor: pointer;
-  
   padding: 2px 2px 2px 4px;
 }
-
-.locitem:hover
-{
-  background-color: #DDDDDD;
-  -moz-border-radius: 10px; 
-  border-radius: 10px;  
+.locitem:hover {
+  background-color: #dddddd;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
-
-.personicon
-{
+.personicon {
   display: block;
-
   width: 20px;
-  height: 20px;  
-  
+  height: 20px;
   padding-right: 4px;
-  
-  background-image: url('../../assets/images/personsmall.png');
-  background-repeat: no-repeat;  
+  background-image: url("../../assets/images/personsmall.png");
+  background-repeat: no-repeat;
 }
-
-.shireicon
-{
+.shireicon {
   width: 20px;
-  height: 20px;  
-  
+  height: 20px;
   margin-right: 4px;
-  
-  background-image: url('../../assets/images/shireicon.png');
-  background-repeat: no-repeat;  
+  background-image: url("../../assets/images/shireicon.png");
+  background-repeat: no-repeat;
 }
-
-.baronyicon
-{
+.baronyicon {
   width: 20px;
-  height: 20px;  
-  
+  height: 20px;
   margin-right: 4px;
-  
-  background-image: url('../../assets/images/baronyicon.png');
-  background-repeat: no-repeat;  
+  background-image: url("../../assets/images/baronyicon.png");
+  background-repeat: no-repeat;
 }

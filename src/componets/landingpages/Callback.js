@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation} from "react-router";
 
 import useGlobal from "../common/globalstore.js";
 
@@ -7,13 +8,15 @@ const CallBack = () => {
 
   const doAuthenication = () => {
     //globalActions.handleAuthenication();
-    if (/access_token|id_token|error/.test(globalState.state.auth0.location.hash)) {
-         alert("HELLO!!!");
+    //if (/access_token|id_token|error/.test(globalState.state.auth0.location.hash)) {
+    //alert("HELLO!!!");
     //   globalActions.handleAuthenication();
     // } else {
     //   throw new Error("Invalid callback URL");
-     }
+    // }
   };
+
+  console.log(useLocation());
 
   doAuthenication();
   return <p>HERE</p>;

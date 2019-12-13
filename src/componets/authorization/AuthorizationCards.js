@@ -8,7 +8,6 @@ import rawAuthData from './auths/authCard';
 function AuthorizationCards() {
     const [globalState, globalActions] = globalPersonStore();
     const [authData, setAuthData] = useState([]);
-
     
     function addOrReplace(array, item) { 
         const i = array.findIndex(_item => _item.type_id === item.type_id);
@@ -51,7 +50,7 @@ function AuthorizationCards() {
     }
     
     useEffect(() => {
-        if (globalState.person){
+        if (globalState.person.id){
             const fetchData = async () => {
             const result = await axios(`https://marshaldb.midrealm.org/mid2/personauths.php?pId=${globalState.person.id}`,);
             const arryCards = rawAuthData();
@@ -61,7 +60,7 @@ function AuthorizationCards() {
             fetchData();
 
         }
-    },[globalActions, globalState.person]);
+    },[globalActions, globalState]);
 
     const AuthorizationList = props => (
         <div id="authbox" className="authbox">

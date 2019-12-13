@@ -9,22 +9,22 @@ function Personcard() {
     const [branchData, setBranch] = useState({ hits: [] });
 
     useEffect(() => {
-        if (globalState.person){
+        if (globalState.person.id){
               const fetchData = async () => {
-              const result = await axios(`https://marshaldb.midrealm.org/mid2/getbranch.php?pId=${globalState.person.id}`,);
-              setBranch(result.data);
-              let p = globalState.person
-              p.branch = result.data.hits[0].branch;
-              p.branchid = result.data.hits[0].group_id;
-              p.region = result.data.hits[0].region;
-              p.regionId = result.data.hits[0].region_id;
-              globalActions.storePerson(p);
+                const result = await axios(`https://marshaldb.midrealm.org/mid2/getbranch.php?pId=${globalState.person.id}`,);
+                setBranch(result.data);
+                let p = globalState.person;
+                p.branch = result.data.hits[0].branch;
+                p.branchid = result.data.hits[0].group_id;
+                p.region = result.data.hits[0].region;
+                p.regionId = result.data.hits[0].region_id;
+                globalActions.storePerson(p);
               }
           
             fetchData();
         }
 
-        }, [globalActions, globalState.person]);
+        }, [globalActions, globalState]);
 
     const seperateName = (inStr, pos) => {
         let namePart = inStr.split(' ');
@@ -59,7 +59,7 @@ function Personcard() {
 
     return (
         <>
-        {globalState.person && <PersonCard /> }  
+        {globalState.person.name && <PersonCard /> }  
         </>
       );
 }

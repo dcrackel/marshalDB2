@@ -23,7 +23,8 @@ const initialState = {
     responseType: "token id_token",
     scope: "openid profile email"
   }),
-  session: {}
+  session: {},
+  profile: {}
   
 };
 

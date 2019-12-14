@@ -107,6 +107,7 @@ function Header() {
         <div className="authreport" />
         <div className="loginbutton">
           <div onClick={e => loginWasClicked()} className="login" />
+          {globalActions.isAuthenticated() ? "Log Out" : "Log In"}
         </div>
       </div>
     </div>

@@ -29,7 +29,7 @@ const CallBack = () => {
   }
 
   const doAuthenication = () => {
-    //globalActions.handleAuthenication();
+    globalActions.handleAuthenication();
     //if (/access_token|id_token|error/.test(globalState.state.auth0.location.hash)) {
     //alert("HELLO!!!");
     //   globalActions.handleAuthenication();
@@ -38,7 +38,7 @@ const CallBack = () => {
     // }
   };
  
-  console.log(usePath() + getQueryVariable('access_token') + ' q=' + startsWith + ' query=' );
+  //console.log(usePath() + getQueryVariable('access_token') + ' q=' + startsWith + ' query=' );
 
   doAuthenication();
   return <p>HERE <Router></Router></p>;

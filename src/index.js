@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { useRoutes } from "hookrouter";
+import { useRoutes } from "raviger";
 import "./index.css";
 import routes from "./componets/hooks/Router";
 import * as serviceWorker from "./serviceWorker";

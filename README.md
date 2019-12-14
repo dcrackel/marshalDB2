@@ -5,7 +5,8 @@ npm i -g create-react-app && create-react-app marshalDB2
 ## Then RUN...
 npm install axios
 npm install -s use-global-hook
-npm i hookrouter
+-- npm i hookrouter (maybe not)
+npm i raviger (this and hook router do the same thing, this one is newer)
 npm i passport passport-auth0
 npm i express-session uid-safe
 

@@ -6,7 +6,7 @@ import Callback from "../landingpages/Callback"
 
 const routes = {
   "/": () => <Standard />,
-  "/callback": () => <Callback />
+  "/callback": () => <Callback  />
   //,
   //"/about": () => <About />,
   //"/contact": () => <Contact />

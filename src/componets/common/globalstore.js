@@ -24,7 +24,8 @@ const initialState = {
     scope: "openid profile email"
   }),
   session: {},
-  profile: {}
+  profile: null,
+  error: ""
   
 };
 

@@ -18,6 +18,10 @@ function Header() {
     globalActions.login(globalState);
   };
 
+  const loginOutClicked = () => {
+    globalActions.logout(globalState);
+  };
+
   const removeURLEncoding = inStr => {
     inStr = inStr.replace(/%20/g, " ");
     return inStr;
@@ -63,6 +67,23 @@ function Header() {
     setQuery(text);
   };
 
+  const getUserData = () =>
+  {
+    return globalActions.getProfile(globalState);
+  }
+
+  const ShowUser = props => (
+    <div className='userpersonbox' onClick={e => loginOutClicked()} >
+      {props.picture}
+      <img
+        className='loggedInUserIcon'
+        src={props.profile.picture}
+        alt="profile pic"
+      />
+    <div className='authtext2'>Log Out</div>
+    </div>
+  );
+
   //this adds a delay, when a user starts typing until the search is preformed to allow
   //them to finish typing without doing a look-up on every charater as it's typed.
   const debounced = useDebounce(query, 250);
@@ -106,8 +127,11 @@ function Header() {
         <div className="activereport" />
         <div className="authreport" />
         <div className="loginbutton">
-          <div onClick={e => loginWasClicked()} className="login" />
-          {globalActions.isAuthenticated() ? "Log Out" : "Log In"}
+          {globalActions.isAuthenticated() ? (
+            <ShowUser profile={getUserData()} />
+          ) : (
+            <div onClick={e => loginWasClicked()} className="login" />
+          )}
         </div>
       </div>
     </div>

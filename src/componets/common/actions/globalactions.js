@@ -1,4 +1,4 @@
-import { navigate } from 'raviger';
+import { navigate } from "raviger";
 
 export const addToCounter = (store, amount) => {
   const counter = store.state.counter + amount;
@@ -9,12 +9,16 @@ export const storePerson = (store, person) => {
   store.setState({ person });
 };
 
+export const storeProfile = (store, profile) => {
+  store.setState({ profile });
+};
+
 //let p = store.state.authstatus.loginflag);
-export const login = (store) => {
+export const login = store => {
   store.state.auth0.authorize();
 };
 
-export const handleAuthenication = (store) => {
+export const handleAuthenication = store => {
   store.state.auth0.parseHash((err, authResult) => {
     if (authResult && authResult.accessToken && authResult.idToken) {
       setSession(authResult);
@@ -34,37 +38,56 @@ export const setSession = authResult => {
   localStorage.setItem("access_token", authResult.accessToken);
   localStorage.setItem("id_token", authResult.idToken);
   localStorage.setItem("expires_at", expiresAt);
-}; 
+};
 
 export const isAuthenticated = () => {
   const expiresAt = JSON.parse(localStorage.getItem("expires_at"));
   return new Date().getTime() < expiresAt;
-}
+};
 
-export const logout = (store) => {
+export const logout = store => {
   localStorage.removeItem("access_token");
   localStorage.removeItem("id_token");
   localStorage.removeItem("expires_at");
   store.state.profile = null;
   navigate(`/`);
-  this.auth0.logout({
+  store.state.auth0.logout({
     clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
     returnTo: "http://localhost:3000"
   });
 };
 
-const getAccessToken = () => {
-  const accessToken = localStorage.getItem("access_token");
+export const getAccessToken = () => {
+  const accessToken = localStorage.getItem("access_token"); //access_token  id_token
   if (!accessToken) {
     throw new Error("No access token found.");
   }
   return accessToken;
 };
 
-const getProfile = (store) => {
-  if (store.state.profile) return CSS(this.userProfile);
-  store.state.auth0.client.userInfo(getAccessToken(), (err, profile) => {
-  if (profile) store.state.profile = profile;
-  return profile;
-  });
+export const getIdToken = () => {
+  const accessToken = localStorage.getItem("id_token"); //access_token  id_token
+  if (!accessToken) {
+    throw new Error("No access token found.");
+  }
+  return accessToken;
+};
+
+function parseJwt (token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
+};
+
+export const getProfile = (store) => {
+  if (!store.state.profile){
+    let decoded = parseJwt(getIdToken());
+    storeProfile(store, decoded);
+  }
+  console.log(store.state.profile);
+  return store.state.profile;
 };

@@ -22,11 +22,14 @@ export const handleAuthenication = store => {
   store.state.auth0.parseHash((err, authResult) => {
     if (authResult && authResult.accessToken && authResult.idToken) {
       setSession(authResult);
-      navigate(`/`);
+      navigate(`/admin`);
     } else if (err) {
-      navigate(`/`);
-      alert(`Error: ${err.error}. Check the console for futher details`);
-      console.log(err);
+      if (authResult) {
+        alert(`Error: ${err.error}. Check the console for futher details`);
+        console.log(err);
+        console.log(store.state + authResult);
+        navigate(`/`);
+      }
     }
   });
 };
@@ -73,21 +76,25 @@ export const getIdToken = () => {
   return accessToken;
 };
 
-function parseJwt (token) {
-  var base64Url = token.split('.')[1];
-  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function(c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
 
   return JSON.parse(jsonPayload);
-};
+}
 
-export const getProfile = (store) => {
-  if (!store.state.profile){
+export const getProfile = store => {
+  if (!store.state.profile) {
     let decoded = parseJwt(getIdToken());
     storeProfile(store, decoded);
   }
-  console.log(store.state.profile);
   return store.state.profile;
 };

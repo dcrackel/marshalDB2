@@ -67,20 +67,19 @@ function Header() {
     setQuery(text);
   };
 
-  const getUserData = () =>
-  {
+  const getUserData = () => {
     return globalActions.getProfile(globalState);
-  }
+  };
 
   const ShowUser = props => (
-    <div className='userpersonbox' onClick={e => loginOutClicked()} >
+    <div className="userpersonbox" onClick={e => loginOutClicked()}>
       {props.picture}
       <img
-        className='loggedInUserIcon'
+        className="loggedInUserIcon"
         src={props.profile.picture}
         alt="profile pic"
       />
-    <div className='authtext2'>Log Out</div>
+      <div className="authtext2">Log Out</div>
     </div>
   );
 
@@ -130,7 +129,10 @@ function Header() {
           {globalActions.isAuthenticated() ? (
             <ShowUser profile={getUserData()} />
           ) : (
-            <div onClick={e => loginWasClicked()} className="login" />
+            <div onClick={e => loginWasClicked()} >
+              <div className="login"></div>
+              <div className="authtext2">Log In</div>
+            </div>
           )}
         </div>
       </div>

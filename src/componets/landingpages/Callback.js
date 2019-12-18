@@ -32,9 +32,10 @@ const CallBack = () => {
     // } else {
     //   throw new Error("Invalid callback URL");
     // }
+
+
   };
 
-  //console.log(usePath() + getQueryVariable('access_token') + ' q=' + startsWith + ' query=' );
 
   doAuthenication();
   return (

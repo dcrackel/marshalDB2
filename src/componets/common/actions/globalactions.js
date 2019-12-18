@@ -1,4 +1,5 @@
 import { navigate } from "raviger";
+import axios from "axios";
 
 export const addToCounter = (store, amount) => {
   const counter = store.state.counter + amount;
@@ -22,9 +23,12 @@ export const handleAuthenication = store => {
   store.state.auth0.parseHash((err, authResult) => {
     if (authResult && authResult.accessToken && authResult.idToken) {
       setSession(authResult);
+      handleAuthorization(store);
       navigate(`/admin`);
     } else if (err) {
       if (authResult) {
+        //weird issue were 2 auth requests are made, 1 comes back empty, 2nd is corect. this ignores the empty one.
+        //this is totally treating the symptoms.
         alert(`Error: ${err.error}. Check the console for futher details`);
         console.log(err);
         console.log(store.state + authResult);
@@ -97,4 +101,22 @@ export const getProfile = store => {
     storeProfile(store, decoded);
   }
   return store.state.profile;
+};
+
+export const handleAuthorization = store => {
+  axios({
+    method: "post",
+    url: "https://marshaldb.midrealm.org/mid2/login.php",
+    headers: {
+      "Content-Type": "applicatoin/json"
+    },
+    data: {"token":"thisisatoek12345"}
+  }).then(
+    response => {
+      console.log(response);
+    },
+    error => {
+      console.log(error);
+    }
+  );
 };

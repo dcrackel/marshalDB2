@@ -46,12 +46,28 @@ function Header() {
     </div>
   );
 
+  const getBranch = person => {
+    const fetchData = async () => {
+      const result = await axios(
+        `https://marshaldb.midrealm.org/mid2/getbranch.php?pId=${globalState.person.id}`
+      );
+      person.branch = result.data.hits[0].branch;
+      person.branchid = result.data.hits[0].group_id;
+      person.region = result.data.hits[0].region;
+      person.regionId = result.data.hits[0].region_id;
+      globalActions.storePerson(person);
+    };
+    fetchData();
+  };
+
   const selectItem = (id, type, name) => {
     const person = globalState.person;
     person.id = id;
     person.type = type;
     person.name = name;
+    person.branch = "";
     globalActions.storePerson(person);
+    getBranch(person);
     setQuery("");
     setDoSearch(false);
     setShowDropDown(false);
@@ -105,10 +121,10 @@ function Header() {
         <div className="activereport" />
         <div className="authreport" />
         <div className="loginbutton">
-            <div onClick={e => loginWasClicked()}>
-              <div className="login"></div>
-              <div className="authtext2">Log In</div>
-            </div>
+          <div onClick={e => loginWasClicked()}>
+            <div className="login"></div>
+            <div className="authtext2">Log In</div>
+          </div>
         </div>
       </div>
     </div>

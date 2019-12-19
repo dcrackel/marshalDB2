@@ -27,7 +27,7 @@ export const login = store => {
 export const handleAuthenication = store => {
   store.state.auth0.parseHash((err, authResult) => {
     if (authResult && authResult.accessToken && authResult.idToken) {
-      setSession(authResult);
+      setSession(store, authResult);
       handleAuthorization(store);
       navigate(`/admin`);
     } else if (err) {
@@ -43,13 +43,17 @@ export const handleAuthenication = store => {
   });
 };
 
-export const setSession = authResult => {
+function setSession(store, authResult){
   const expiresAt = JSON.stringify(
     authResult.expiresIn * 1000 + new Date().getTime()
   );
   localStorage.setItem("access_token", authResult.accessToken);
   localStorage.setItem("id_token", authResult.idToken);
   localStorage.setItem("expires_at", expiresAt);
+  let decoded = parseJwt(authResult.idToken);
+  let temp = JSON.stringify(decoded);
+  localStorage.setItem("profile", JSON.stringify(temp));
+  storeProfile(store, decoded);
 };
 
 export const isAuthenticated = () => {
@@ -101,9 +105,13 @@ function parseJwt(token) {
 }
 
 export const getProfile = store => {
-  if (!store.state.profile) {
-    let decoded = parseJwt(getIdToken());
-    storeProfile(store, decoded);
+  if (!store.state.profile){
+    const localStoredProfile = localStorage.getItem("profile");
+    if (localStoredProfile){ 
+      const localProfile = JSON.parse(localStoredProfile);
+      storeProfile(store, localProfile);
+    }
+
   }
   return store.state.profile;
 };
@@ -118,14 +126,16 @@ export const handleAuthorization = store => {
     },
     data: { tid: getIdToken() }
   }).then(
-    response => { 
+    response => {
       console.log(response.data);
-      if (Object.keys(response.data).length < 1 || Object.keys(response.data).length > 20)
-      {
+      if (
+        Object.keys(response.data).length < 1 ||
+        Object.keys(response.data).length > 20
+      ) {
         alert("Your account must be updated by a Marshal before loggin in");
         logout(store);
       }
-      storeAuthRanks(store, response.data)
+      storeAuthRanks(store, response.data);
     },
     error => {
       console.log(error);

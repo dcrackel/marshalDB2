@@ -10,7 +10,7 @@ const initialState = {
     type: "",
     branchid: "",
     branch: "",
-    regionid: "",
+    regionId: "",
     region: ""
   },
   authstatus: {
@@ -24,10 +24,9 @@ const initialState = {
     scope: "openid profile email"
   }),
   session: {},
-  profile: {},
+  profile: null,
   authranks: null,
   error: ""
-  
 };
 
 const useGlobal = useGlobalHook(React, initialState, actions);

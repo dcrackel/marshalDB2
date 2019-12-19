@@ -7,6 +7,7 @@ import "./AdminHeader.css";
 
 function Header() {
   const [data, setData] = useState({ hits: [] });
+  const [profileImage, setProfileImage] = useState("");
   const [query, setQuery] = useState("");
   const [doSearch, setDoSearch] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
@@ -23,7 +24,7 @@ function Header() {
   };
 
   const getClassForType = type => {
-    let classN = "personicon";
+    let classN = "personiconsmall";
     if (type === "1") classN = "shireicon";
     if (type === "2") classN = "baronyicon";
     return classN;
@@ -46,12 +47,28 @@ function Header() {
     </div>
   );
 
+  const getBranch = person => {
+    const fetchData = async () => {
+      const result = await axios(
+        `https://marshaldb.midrealm.org/mid2/getbranch.php?pId=${globalState.person.id}`
+      );
+      person.branch = result.data.hits[0].branch;
+      person.branchid = result.data.hits[0].group_id;
+      person.region = result.data.hits[0].region;
+      person.regionId = result.data.hits[0].region_id;
+      globalActions.storePerson(person);
+    };
+    fetchData();
+  };
+
   const selectItem = (id, type, name) => {
     const person = globalState.person;
     person.id = id;
     person.type = type;
     person.name = name;
+    person.branch = "";
     globalActions.storePerson(person);
+    getBranch(person);
     setQuery("");
     setDoSearch(false);
     setShowDropDown(false);
@@ -62,18 +79,18 @@ function Header() {
     setQuery(text);
   };
 
-  const getUserData = () => {
-    return globalActions.getProfile(globalState);
-  };
-
-  const ShowUser = props => (
+  const ShowUser = () => (
     <div className="userpersonbox" onClick={e => loginOutClicked()}>
-      {props.picture}
+      {globalState.profile ?
       <img
         className="loggedInUserIcon"
-        src={props.profile.picture}
+        src={globalState.profile ? globalState.profile.picture : ""}
         alt="profile pic"
       />
+      :
+      <div className="login"></div>
+      } 
+
       <div className="authtext2">Log Out</div>
     </div>
   );
@@ -93,7 +110,6 @@ function Header() {
       data: { tid: globalActions.getIdToken(), s: query }
     }).then(
       response => {
-        console.log(response.data);
         setData(response.data);
       },
       error => {
@@ -103,6 +119,15 @@ function Header() {
   };
 
   useEffect(() => {
+    // if (!global.profile) {
+    //   //if refresh is pressed the use icon is forgotten then replaces it.
+    //   try {
+    //     //let temp = JSON.parse(globalActions.getProfile());
+    //     setProfileImage(JSON.parse(globalActions.getProfile()));
+
+    //   } catch {}
+    // }
+
     if (query.length > 1 && doSearch && debounced) {
       fetchDataAdmin();
       setShowDropDown(true);
@@ -133,7 +158,7 @@ function Header() {
         <div className="activereport" />
         <div className="authreport" />
         <div className="loginbutton">
-            <ShowUser profile={getUserData()} />
+          <ShowUser />
         </div>
       </div>
     </div>

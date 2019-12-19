@@ -29,16 +29,16 @@
   margin: 0px 30px 0px 30px;
 }
 
-#namebox {
+.namebox {
   display: flex;
   padding: 0px 20px 10px 0px;
 }
 
-#name {
+.name {
   margin-left: 20px;
 }
 
-#personicon {
+.personicon {
   display: block;
   width: 50px;
   height: 50px;
@@ -99,4 +99,34 @@
 
   background-image: url("../../../assets/images/print.png");
   background-repeat: no-repeat;
+}
+
+.editicon {
+  width: 50px;
+  height: 50px;
+  background-image: url(../../../assets/images/downarrow.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.innerpersoncard
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 830px;
+    padding: 10px;
+    background: #dedede;
+    border: 5px solid #999999;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.namebox2
+{ 
+  display: flex;
+  flex-wrap: wrap;  
+  width: 50%; 
 }

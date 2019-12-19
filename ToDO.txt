@@ -1,0 +1,17 @@
+Wierd Auth Issue, where 2 requests are sent, 1st is no good?
+https://github.com/auth0/auth0.js/issues/655
+
+
+MIT Stats
+
+All Individuals may update personal bio info as they see fit. No auths or dates.
+
+Rapier and Armored Group Marshals may edit dates, auths.
+
+Regionals and DKEMs can do anything in their discipline.
+
+Tracking system for all that make edits
+
+Former KEMS never expire 
+
+

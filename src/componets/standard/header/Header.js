@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import useDebounce from "../common/debounce.js";
-import useGlobal from "../common/globalstore.js";
-import Auth from "../auth/Auth";
+import useDebounce from "../../common/debounce.js";
+import useGlobal from "../../common/globalstore.js";
 
 import "./Header.css";
 
@@ -16,10 +15,6 @@ function Header() {
 
   const loginWasClicked = () => {
     globalActions.login(globalState);
-  };
-
-  const loginOutClicked = () => {
-    globalActions.logout(globalState);
   };
 
   const removeURLEncoding = inStr => {
@@ -67,36 +62,20 @@ function Header() {
     setQuery(text);
   };
 
-  const getUserData = () => {
-    return globalActions.getProfile(globalState);
-  };
-
-  const ShowUser = props => (
-    <div className="userpersonbox" onClick={e => loginOutClicked()}>
-      {props.picture}
-      <img
-        className="loggedInUserIcon"
-        src={props.profile.picture}
-        alt="profile pic"
-      />
-      <div className="authtext2">Log Out</div>
-    </div>
-  );
-
   //this adds a delay, when a user starts typing until the search is preformed to allow
   //them to finish typing without doing a look-up on every charater as it's typed.
   const debounced = useDebounce(query, 250);
 
+  const fetchData = async () => {
+    setDoSearch(false);
+    const result = await axios(
+      `https://marshaldb.midrealm.org/mid2/dropdown2.php?s=${query}`
+    );
+    setData(result.data);
+  };
+
   useEffect(() => {
     if (query.length > 1 && doSearch && debounced) {
-      const fetchData = async () => {
-        setDoSearch(false);
-        const result = await axios(
-          `https://marshaldb.midrealm.org/mid2/dropdown2.php?s=${query}`
-        );
-        setData(result.data);
-      };
-
       fetchData();
       setShowDropDown(true);
     }
@@ -126,14 +105,10 @@ function Header() {
         <div className="activereport" />
         <div className="authreport" />
         <div className="loginbutton">
-          {globalActions.isAuthenticated() ? (
-            <ShowUser profile={getUserData()} />
-          ) : (
-            <div onClick={e => loginWasClicked()} >
+            <div onClick={e => loginWasClicked()}>
               <div className="login"></div>
               <div className="authtext2">Log In</div>
             </div>
-          )}
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useRoutes } from "raviger";
 import "./index.css";
-import routes from "./componets/hooks/Router";
+import routes from "./componets/common/router/Router";
 import * as serviceWorker from "./serviceWorker";
 
 function App() {

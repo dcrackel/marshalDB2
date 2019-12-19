@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import globalPersonStore from "../common/globalstore";
+import globalPersonStore from "../../common/globalstore";
 import axios from 'axios';
 import './Personcard.css';
 

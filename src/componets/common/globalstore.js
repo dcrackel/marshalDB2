@@ -14,7 +14,7 @@ const initialState = {
     region: ""
   },
   authstatus: {
-    loginflag: true
+    loginflag: false
   },
   auth0: new auth0.WebAuth({
     domain: process.env.REACT_APP_AUTH0_DOMAIN,
@@ -24,7 +24,8 @@ const initialState = {
     scope: "openid profile email"
   }),
   session: {},
-  profile: null,
+  profile: {},
+  authranks: null,
   error: ""
   
 };

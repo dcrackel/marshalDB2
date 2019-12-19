@@ -1,7 +1,7 @@
 import React from "react";
-import Standard from "../landingpages/Standard"
-import Callback from "../landingpages/Callback"
-import Admin from "../landingpages/Admin"
+import Standard from "../../landingpages/Standard"
+import Callback from "../../landingpages/Callback"
+import Admin from "../../landingpages/Admin"
 //import Contact from "./components/Contact";
 //import About from "./components/About";
 

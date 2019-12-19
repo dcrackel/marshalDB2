@@ -20,14 +20,14 @@
 }
 #logo {
   display: block;
-  background-image: url("../../assets/images/logo.png");
+  background-image: url("../../../assets/images/logo.png");
   background-repeat: no-repeat;
   width: 234px;
   height: 150px;
 }
 
 #titlebox {
-  background-image: url(../../assets/images/title.png);
+  background-image: url(../../../assets/images/title.png);
   background-repeat: no-repeat;
   background-position: center top;
   display: flex;
@@ -45,7 +45,7 @@
 }
 .login {
   display: block;
-  background-image: url("../../assets/images/login2.png");
+  background-image: url("../../../assets/images/login2.png");
   background-repeat: no-repeat;
   width: 30px;
   height: 30px;
@@ -79,7 +79,7 @@
 }
 .searchicon {
   background: #ea0001;
-  background-image: url("../../assets/images/search.png");
+  background-image: url("../../../assets/images/search.png");
   width: 30px;
   height: 30px;
   margin: 100px 0px 0px -1px;
@@ -124,25 +124,24 @@
   width: 20px;
   height: 20px;
   padding-right: 4px;
-  background-image: url("../../assets/images/personsmall.png");
+  background-image: url("../../../assets/images/personsmall.png");
   background-repeat: no-repeat;
 }
 .shireicon {
   width: 20px;
   height: 20px;
   margin-right: 4px;
-  background-image: url("../../assets/images/shireicon.png");
+  background-image: url("../../../assets/images/shireicon.png");
   background-repeat: no-repeat;
 }
 .baronyicon {
   width: 20px;
   height: 20px;
   margin-right: 4px;
-  background-image: url("../../assets/images/baronyicon.png");
+  background-image: url("../../../assets/images/baronyicon.png");
   background-repeat: no-repeat;
 }
-.loggedInUserIcon
-{
+.loggedInUserIcon {
   display: block;
   width: 30px;
   height: 30px;
@@ -151,8 +150,7 @@
   cursor: pointer;
   border-radius: 50%;
 }
-.authtext2
-{
+.authtext2 {
   font-size: 8pt;
   font-family: Verdana, Geneva, sans-serif;
   padding: 0px 0px 0px 8px;
@@ -160,7 +158,6 @@
   margin: 0px 0px 0px 0px;
 }
 
-.userpersonbox
-{
+.userpersonbox {
   margin: -10px 0px 0px 0px;
 }

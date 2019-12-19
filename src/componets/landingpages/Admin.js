@@ -1,14 +1,14 @@
 import React from "react";
-import Header from "../header/Header";
-import Personcard from "../personcard/Personcard";
-import AuthorizationCards from "../authorization/AuthorizationCards";
+import AdminHeader from "../admin/adminheader/AdminHeader";
+import AdminPersoncard from "../admin/adminpersoncard/AdminPersonCard";
+//import AuthorizationCards from "../authorization/AuthorizationCards";
 
 class Admin extends React.Component {
   render() {
     return (
       <div>
-          <Header />
-          THIS IS THE ADMIN PAGE
+          <AdminHeader />
+          <AdminPersoncard />
       </div>
     );
   }

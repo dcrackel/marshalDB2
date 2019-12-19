@@ -14,9 +14,14 @@ export const storeProfile = (store, profile) => {
   store.setState({ profile });
 };
 
+export const storeAuthRanks = (store, authranks) => {
+  store.setState({ authranks });
+};
+
 //let p = store.state.authstatus.loginflag);
 export const login = store => {
   store.state.auth0.authorize();
+  store.state.authstatus.loginflag = true;
 };
 
 export const handleAuthenication = store => {
@@ -56,7 +61,7 @@ export const logout = store => {
   localStorage.removeItem("access_token");
   localStorage.removeItem("id_token");
   localStorage.removeItem("expires_at");
-  store.state.profile = null;
+  store.state.authstatus.loginflag = false;
   navigate(`/`);
   store.state.auth0.logout({
     clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
@@ -109,11 +114,18 @@ export const handleAuthorization = store => {
     url: "https://marshaldb.midrealm.org/mid2/login.php",
     headers: {
       "Content-Type": "applicatoin/json"
+      //"Access-Control-Allow-Origin": "http://localhost:3000"
     },
-    data: {"token":"thisisatoek12345"}
+    data: { tid: getIdToken() }
   }).then(
-    response => {
-      console.log(response);
+    response => { 
+      console.log(response.data);
+      if (Object.keys(response.data).length < 1 || Object.keys(response.data).length > 20)
+      {
+        alert("Your account must be updated by a Marshal before loggin in");
+        logout(store);
+      }
+      storeAuthRanks(store, response.data)
     },
     error => {
       console.log(error);

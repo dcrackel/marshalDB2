@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../header/Header";
-import Personcard from "../personcard/Personcard";
-import AuthorizationCards from "../authorization/AuthorizationCards";
+import Header from "../standard/header/Header";
+import Personcard from "../standard/personcard/Personcard";
+import AuthorizationCards from "../standard/authorization/AuthorizationCards";
 
 class Standard extends React.Component {
   render() {

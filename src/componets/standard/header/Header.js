@@ -23,7 +23,7 @@ function Header() {
   };
 
   const getClassForType = type => {
-    let classN = "personicon";
+    let classN = "personiconsmall";
     if (type === "1") classN = "shireicon";
     if (type === "2") classN = "baronyicon";
     return classN;
